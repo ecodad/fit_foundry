@@ -94,7 +94,7 @@ LaunchKit generates tailored resumes and cover letters for jobs selected from Fi
 
 ## First-Time Setup
 
-For step-by-step setup instructions, see [SETUP.md](references/SETUP.md). The automated setup workflow is in [SETUP-WORKFLOW.md](references/SETUP-WORKFLOW.md) — trigger it by typing "Set up FitFoundry — Session 1" in Cowork.
+For step-by-step setup instructions, see [SETUP.md](SETUP.md). The automated setup workflow is in [SETUP-WORKFLOW.md](SETUP-WORKFLOW.md) — trigger it by typing "Set up FitFoundry — Session 1" in Cowork.
 
 ---
 

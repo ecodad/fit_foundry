@@ -1,7 +1,7 @@
 ---
 name: fitfoundry
 description: >
-  FitFoundry is an AI-assisted job search workflow for Cowork. Use this skill whenever the user wants to search for jobs, run a job board scrape, review job listings, score postings against their profile, check for ghost jobs, or set up their job search workspace. Trigger whenever the user mentions: job search, job board, run FitFoundry, review listings, score jobs, ghost job check, Climatebase, 80000 Hours, Wellfound, Breakthrough Energy, YCombinator jobs, Draper jobs, Formlabs jobs, Indeed search, Dice search, or setting up a job search workflow. Also trigger if the user pastes or references FITFOUNDRY-WORKFLOW.md or JOB-BOARD-WORKFLOW.md.
+  FitFoundry is an AI-assisted job search workflow for Cowork. Use this skill whenever the user wants to search for jobs, run a job board scrape, review job listings, score postings against their profile, check for ghost jobs, or set up their job search workspace. Trigger whenever the user mentions: job search, job board, run FitFoundry, review listings, score jobs, ghost job check, search a specific job board by name, or setting up a job search workflow. Also trigger if the user pastes or references FITFOUNDRY-WORKFLOW.md or JOB-BOARD-WORKFLOW.md.
 ---
 
 # FitFoundry — AI-Assisted Job Search
@@ -20,7 +20,7 @@ Full system requirements are in `REQUIREMENTS.md`. Setup instructions are in `SE
 
 Setup takes two sessions with a Claude Desktop restart between them.
 
-**Session 1** copies workflow files to the workspace, installs the Puppeteer MCP server, and connects job board accounts (Indeed, Dice, and optionally Claude in Chrome for LinkedIn and Wellfound). Ends with a required restart.
+**Session 1** copies workflow files to the workspace, installs the Puppeteer MCP server, and connects job board accounts (MCP connectors and optionally Claude in Chrome for login-gated boards). Ends with a required restart.
 
 **Session 2** verifies everything is active, then runs ProfileBuilder to create the career profile and search settings.
 
@@ -79,20 +79,7 @@ Requires the `docx` Cowork skill. Requires base resume and cover letter files (`
 
 ## Supported Job Boards (Stage 2)
 
-| Board | Auth | Method | Site File |
-|-------|------|--------|-----------|
-| Climatebase | None | Puppeteer | `sites/Climatebase.md` |
-| 80,000 Hours | None | Puppeteer + Algolia API | `sites/80kHours.md` |
-| Draper Laboratory | None | Workday CXS API | `sites/Draper.md` |
-| LinkedIn | LinkedIn login | Claude in Chrome | `sites/LinkedIn.md` |
-| Wellfound | Wellfound login | Claude in Chrome | `sites/Wellfound.md` |
-| Y Combinator | None | Puppeteer | `sites/YCombinator.md` |
-| BEV Jobs (Breakthrough Energy) | None | Puppeteer | `sites/BreakthroughEnergy.md` |
-| BEF Jobs (Breakthrough Energy) | None | Puppeteer | `sites/BreakthroughEnergy.md` |
-| Formlabs | None | Puppeteer | `sites/Formlabs.md` |
-| Indeed | Indeed account (MCP) | Indeed MCP connector | `sites/Indeed.md` |
-| Dice | Dice account (MCP) | Dice MCP + Puppeteer | `sites/Dice.md` |
-| Work on Climate | Slack membership | Manual only | `sites/WorkOnClimate.md` |
+The full list of supported boards, their authentication requirements, scraping methods, and site files is maintained in `JOB-BOARD-SITE-NOTES.md` → **Known Boards**. That file is the single source of truth for board registration. When adding a new board, update only `JOB-BOARD-SITE-NOTES.md` and add a corresponding `sites/[BoardName].md` file — no changes to this skill file are needed.
 
 ---
 

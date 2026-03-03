@@ -111,3 +111,16 @@ Use the run type as a label suffix to distinguish passes on the same date:
 ## Recommended Cadence
 
 Monthly. High signal, active board. Run both Remote and In-person passes.
+
+---
+
+## Run History
+
+### 2026-02-22 — In-Person Run
+
+First successful run. Confirmed the scroll-based extraction approach documented above. Key findings incorporated into the Extraction and Known Issues sections:
+
+- Standard link selectors (`a[href*="/jobs/"]`) return nothing — class-based card extraction is required.
+- `remote=false` URL param is unreliable after a location filter is applied via UI — must use sidebar checkboxes.
+- Job alert modal fires after location filter — must dismiss before scrolling.
+- Pre-screening by title is essential at scale: 143 filtered listings reduced to 14 candidates before visiting individual postings.

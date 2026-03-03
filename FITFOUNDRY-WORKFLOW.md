@@ -53,7 +53,7 @@ Check the Scraping method field in the loaded sites/ file:
 ---
 
 SECTION A — MCP CONNECTOR FLOW
-(For boards whose sites/ file shows Scraping method: MCP connector — currently Indeed and Dice)
+(For boards whose sites/ file shows Scraping method: MCP connector)
 
 STEP A1 — CONFIRM CONNECTOR AND SET PARAMETERS
 
@@ -294,31 +294,9 @@ See `JOB-BOARD-SITE-NOTES.md` → **ATS Identification Tip** for the authoritati
 
 ---
 
-### 2026-02-22 — Climatebase In-Person Run (Lessons Learned)
-
-**Scraping approach that worked:**
-The job listings are rendered in a React app. Standard link selectors (`a[href*="/jobs/"]`) returned nothing. Working approach:
-1. Find the scrollable container by detecting elements with `scrollHeight > clientHeight` — the job list container was a `div` with class pattern `sc-3d1ac256-2`.
-2. Scroll the container (not `document.body`) incrementally to trigger lazy loading.
-3. Extract cards using the stable CSS class `.Card_Information__HkDL9`.
-4. Parse fields from the card's inner HTML: `h2 span` for title, `ul li` items for company/location/workplace/job type, `.Card_Details__NXC2i` for description.
-5. Walk up the DOM from each card to find the parent `<a>` tag for the job link.
-
-**Location filter:** The URL parameter `remote=false` did NOT reliably exclude remote jobs after applying a location filter via the UI. Use the location input field (`id="locationNew-desktop"`) and set Workplace Preference sidebar checkboxes (Hybrid + In-person) manually. Applying the location filter triggers a job alert signup modal — dismiss it before proceeding.
-
-**Cookie banner:** Find the Reject button via `Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Reject')` and click it.
-
-**Pre-screening at scale:** With 143 filtered listings, visiting every posting is impractical. A keyword pre-screen on job titles reduced 143 → 14 candidates before visiting any individual postings.
-
-**Puppeteer variable scope:** `puppeteer_evaluate` calls share a JavaScript context within a session. Use anonymous expressions or unique variable names per call to avoid `Identifier already declared` errors.
-
----
-
 ### General Browser Scraping Notes
 
-**LinkedIn short URLs:** Some boards surface listings that link to `lnkd.in/` shortened URLs, which redirect through a LinkedIn warning page. Navigate to the final destination URL directly rather than following through LinkedIn.
-
-**Dover ATS:** Dover-hosted job postings (`app.dover.com`) are blocked by Cloudflare bot protection and the network egress proxy. Cannot be fetched via Puppeteer or WebFetch. Mark all Dover postings as ❓ Unverified.
+See `JOB-BOARD-SITE-NOTES.md` → **General Browser Scraping Notes** for Puppeteer variable scope, LinkedIn short URL handling, Dover ATS limitations, and other cross-board scraping reference material.
 
 ---
 

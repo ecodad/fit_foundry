@@ -149,4 +149,14 @@ For Lever boards: navigate to `jobs.lever.co/[company-slug]` and search the page
 
 For Greenhouse boards: query `https://boards-api.greenhouse.io/v1/boards/[company-slug]/jobs?content=false` and filter by title.
 
-**Egress proxy note:** Most career sites are blocked by the VM's network egress proxy. Use Puppeteer (not WebFetch, curl, or Python requests) for all career site access — Puppeteer bypasses the proxy.
+**Egress proxy note:** Most career sites are blocked by the VM's network egress proxy. Use Puppeteer (not WebFetch, curl, or Python requests) for all career site access — Puppeteer bypasses the proxy. If Puppeteer is also blocked (e.g., Cloudflare-protected pages), use Claude in Chrome as a fallback if the extension is connected.
+
+---
+
+### General Browser Scraping Notes
+
+**Puppeteer variable scope:** `puppeteer_evaluate` calls share a JavaScript context within a session. Use anonymous expressions or unique variable names per call to avoid `Identifier already declared` errors.
+
+**LinkedIn short URLs:** Some boards surface listings that link to `lnkd.in/` shortened URLs, which redirect through a LinkedIn warning page. Navigate to the final destination URL directly rather than following through LinkedIn.
+
+**Dover ATS:** Dover-hosted job postings (`app.dover.com`) are blocked by Cloudflare bot protection and the network egress proxy. Cannot be fetched via Puppeteer or WebFetch. Mark all Dover postings as ❓ Unverified.
