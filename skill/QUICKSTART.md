@@ -86,7 +86,7 @@ If the Settings icon or Connectors section looks different from this description
 
 **Claude says Puppeteer is not active**
 
-Open Settings → MCP Servers (sometimes under Developer or Advanced). Check that the Puppeteer server entry is present. If it is missing, follow the Puppeteer setup steps in `SETUP.md` or say "Help me reinstall the Puppeteer MCP server" in a new Cowork session.
+Open Settings → MCP Servers (sometimes under Developer or Advanced). Check that the Puppeteer server entry is present. If it is missing, follow the Puppeteer setup steps in `SETUP-STAGE1.md` or say "Help me reinstall the Puppeteer MCP server" in a new Cowork session.
 
 ---
 

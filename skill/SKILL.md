@@ -12,7 +12,7 @@ FitFoundry is a three-stage workflow for finding and applying to jobs:
 - **Stage 2 — FitFoundry:** Scrapes job boards, filters and scores listings against the profile, verifies postings are real (ghost job check), and saves structured output. Run as often as needed.
 - **Stage 3 — LaunchKit:** Takes scored job reports from Stage 2 and generates a tailored resume and cover letter (`.docx`) for each selected role.
 
-Full system requirements are in `REQUIREMENTS.md`. Setup instructions are in `SETUP.md`. Quick-reference prompts are in `QUICKSTART.md`.
+Full system requirements are in `REQUIREMENTS.md`. Setup instructions are in `SETUP-STAGE1.md` and `SETUP-STAGE2.md`. Quick-reference prompts are in `QUICKSTART.md`.
 
 ---
 
@@ -24,13 +24,13 @@ Setup takes two sessions with a Claude Desktop restart between them.
 
 **Session 2** verifies everything is active, then runs ProfileBuilder to create the career profile and search settings.
 
-Full instructions for both sessions are in `SETUP-WORKFLOW.md`.
+Full instructions for both sessions are in `SETUP-SESSIONS.md`.
 
 **When a user says "Set up FitFoundry — Session 1":**
-Read `SETUP-WORKFLOW.md` and follow the SESSION 1 instructions exactly.
+Read `SETUP-SESSIONS.md` and follow the SESSION 1 instructions exactly.
 
 **When a user says "Set up FitFoundry — Session 2":**
-Read `SETUP-WORKFLOW.md` and follow the SESSION 2 instructions exactly.
+Read `SETUP-SESSIONS.md` and follow the SESSION 2 instructions exactly.
 
 Do not attempt to download any files from GitHub or the internet during setup. All files needed for bootstrap are already in the skill directory.
 
@@ -87,10 +87,9 @@ The full list of supported boards, their authentication requirements, scraping m
 
 | File | Stage | Purpose |
 |------|-------|---------|
-| `SETUP-WORKFLOW.md` | Setup | Agent instructions for Session 1 and Session 2 |
+| `SETUP-SESSIONS.md` | Setup | Agent instructions for Session 1 and Session 2 |
 | `QUICKSTART.md` | All | Copy-paste prompts and troubleshooting |
 | `REQUIREMENTS.md` | Reference | Full system requirements for all three stages |
-| `SETUP.md` | Reference | Human-readable setup guide |
 | `PROFILEBUILDER.md` | 1 | ProfileBuilder workflow prompt |
 | `CAREER-PROFILE-INTERVIEW.md` | 1 | Interview question bank used by ProfileBuilder |
 | `MY-PROFILE.md` | 1, 2, 3 | Generated career profile — source of truth |

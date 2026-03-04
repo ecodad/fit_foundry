@@ -246,7 +246,7 @@ individual file threshold to 5. Passive and selective → raise it to 7.*
 ## Credentials
 
 ```
-ALGOLIA_APP_ID=[retrieve from DevTools on jobs.80000hours.org — see SETUP.md]
+ALGOLIA_APP_ID=[retrieve from DevTools on jobs.80000hours.org — see QUICKSTART.md]
 ALGOLIA_API_KEY=[retrieve from DevTools on jobs.80000hours.org]
 ALGOLIA_INDEX=jobs_prod
 ```

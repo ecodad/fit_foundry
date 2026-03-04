@@ -13,7 +13,7 @@ These apply to all three stages.
 | **Cowork desktop app** | All browser automation, file operations, and AI execution run inside Cowork. Required for every stage. |
 | **Workspace folder** | A local folder selected in Cowork at session start. All FitFoundry files and output must live here or in a subfolder. |
 | **FitFoundry files** | `PROFILEBUILDER.md`, `FITFOUNDRY-WORKFLOW.md`, `LAUNCHKIT.md`, `CAREER-PROFILE-INTERVIEW.md`, `JOB-BOARD-SITE-NOTES.md`, `QUICK-REFERENCE.md` (template), `MY-PROFILE.md` (template), and the `sites/` folder. |
-| **`.env` file** | Copy `.env.example` to `.env` and set `PROFILE_PATH`, `QUICK_REFERENCE_PATH`, and `OUTPUT_FOLDER`. See `SETUP.md`. |
+| **`.env` file** | Created automatically during Setup Step 2. See `SETUP-STAGE2.md`. |
 | **Puppeteer MCP server** | Required for Stage 2 on all boards except Indeed and Dice. Puppeteer is not included with Cowork — it must be added as an MCP server. See Puppeteer Setup below. |
 
 ---
@@ -57,7 +57,7 @@ FitFoundry requirements vary by job board. Boards not listed in the table below 
 | BEF Jobs (Breakthrough Energy) | Puppeteer MCP server | None |
 | Formlabs | Puppeteer MCP server | None |
 | Draper Laboratory | Puppeteer MCP server | None |
-| 80,000 Hours | Puppeteer MCP server | Algolia App ID and API Key — public read-only keys retrieved from DevTools on `jobs.80000hours.org`. Add to `.env` and `QUICK-REFERENCE.md`. See `SETUP.md`. |
+| 80,000 Hours | Puppeteer MCP server | Algolia App ID and API Key — public read-only keys retrieved from DevTools on `jobs.80000hours.org`. Add to `.env` and `QUICK-REFERENCE.md`. See `QUICKSTART.md` for instructions. |
 | LinkedIn | Claude in Chrome | Claude in Chrome browser extension installed and connected. Active LinkedIn account with session open in Chrome before starting. |
 | Wellfound | Claude in Chrome | Claude in Chrome browser extension installed and connected. Active Wellfound account with session open in Chrome before starting. |
 | Indeed | MCP connector | Indeed MCP connector active at session start. Cowork will prompt you to connect it if not already linked. |
@@ -94,7 +94,7 @@ LaunchKit generates tailored resumes and cover letters for jobs selected from Fi
 
 ## First-Time Setup
 
-For step-by-step setup instructions, see [SETUP.md](SETUP.md). The automated setup workflow is in [SETUP-WORKFLOW.md](SETUP-WORKFLOW.md) — trigger it by typing "Set up FitFoundry — Session 1" in Cowork.
+For step-by-step setup instructions, see [SETUP-STAGE1.md](SETUP-STAGE1.md) and [SETUP-STAGE2.md](SETUP-STAGE2.md). The agent setup instructions are in `SETUP-SESSIONS.md` — trigger it by typing "Set up FitFoundry — Session 1" in Cowork.
 
 ---
 
